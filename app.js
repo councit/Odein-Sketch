@@ -1,6 +1,8 @@
 function createGrid(numLength){
+    
     let gridSelector = document.querySelector(".grid");
     
+    clearGrid();
     gridSelector.style.gridTemplateRows = `repeat(${numLength}, 50px)`
     gridSelector.style.gridTemplateColumns = `repeat(${numLength}, 50px)`
  
@@ -31,6 +33,9 @@ function clearGrid(){
 }
 function submitGridInput(){
     let inputSelect = document.querySelector('.user-input');
+    let gridSelect = document.querySelector('.grid');
+
+    gridSelect.innerHTML = "";
     if(inputSelect.value < 21){
         createGrid(inputSelect.value);
     }
